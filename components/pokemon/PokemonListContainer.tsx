@@ -42,6 +42,29 @@ export default function PokemonListContainer() {
     })
 
 
+    const Paging = () => {
+        return (
+            <Pagination
+                current={page}
+                onChange={changePage}
+                total={1020}
+                pageSize={20}
+                className={"flex gap-x-2"}
+                itemRender={(page1, type, element) => {
+                    if (type === "page") {
+                        return (
+                            <Button
+                                className={`${page1 === page && ('bg-slate-400')}`}
+                            >
+                                {page1}
+                            </Button>
+                        )
+                    }
+                }}
+            />
+        )
+    }
+
     return (
         <div className={"flex flex-col gap-5"}>
             <Input
@@ -58,24 +81,7 @@ export default function PokemonListContainer() {
                     )
                     : (
                         <>
-                            <Pagination
-                                current={page}
-                                onChange={changePage}
-                                total={1020}
-                                pageSize={20}
-                                className={"flex gap-x-2"}
-                                itemRender={(page1, type, element) => {
-                                    if (type === "page") {
-                                        return (
-                                            <Button
-                                                className={`${page1 === page && ('bg-slate-400')}`}
-                                            >
-                                                {page1}
-                                            </Button>
-                                        )
-                                    }
-                                }}
-                            />
+                            <Paging/>
                             <div className={"grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5"}>
                                 {data?.results.map((pokemon) => {
                                     return (
@@ -83,6 +89,7 @@ export default function PokemonListContainer() {
                                     )
                                 })}
                             </div>
+                            <Paging/>
                         </>
                     )
             }
