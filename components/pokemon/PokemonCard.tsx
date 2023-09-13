@@ -15,8 +15,8 @@ export default function PokemonCard({name}: PokemonCardProps) {
             return getPokemon(name)
         },
         onSettled: (data1, error) => {
-            console.log("🌍 pokemons", data1)
-            console.log("🌍 pokemons error", error)
+            // console.log("🌍 pokemons", data1)
+            // console.log("🌍 pokemons error", error)
         }
     })
 
@@ -31,7 +31,7 @@ export default function PokemonCard({name}: PokemonCardProps) {
                 </CardHeader>
                 {data && (
                     <CardContent className={"relative w-52 h-52"}>
-                        <PokemonImage image={data?.sprites.other.home.front_default} name={name}/>
+                        <PokemonImage image={data?.sprites.other.home.front_default ?? data.sprites.other["official-artwork"].front_default ?? data.sprites.front_default} name={name}/>
                     </CardContent>
                 )}
 
