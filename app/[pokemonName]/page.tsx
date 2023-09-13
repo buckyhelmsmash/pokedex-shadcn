@@ -120,8 +120,8 @@ function PokemonPage({params}: { params: { pokemonName: string } }) {
                 })}
               </div>
             </div>
-            <div className={"flex w-full justify-center m-y-8"}>
-            <p className={"break-words max-w-md text-center"}>{species?.flavor_text_entries[0].flavor_text}</p>
+            <div className={"flex w-full justify-center m-y-8 bg-slate-200 border border-slate-400 rounded rounded-box p-8"}>
+            <p className={"break-words max-w-md text-center text-black"}>{species?.flavor_text_entries[0].flavor_text}</p>
             </div>
             <div className={"flex flex-col gap-y-4 w-full items-center"}>
               <h2 className={"text-lg font-semibold"}>Evolutions</h2>
