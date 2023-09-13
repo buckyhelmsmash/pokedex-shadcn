@@ -125,13 +125,13 @@ function PokemonPage({params}: { params: { pokemonName: string } }) {
             </div>
             <div className={"flex flex-col gap-y-4 w-full items-center"}>
               <h2 className={"text-lg font-semibold"}>Evolutions</h2>
-              {evos ? (
+              {evos && evos.length > 1 ? (
                 <div className="grid grid-flow-col auto-cols-max hover:auto-cols-min">
                   {evos.map((evo) => {
                     return <PokemonCard name={evo} key={evo}/>
                   })}
                 </div>
-              ) : (<p>Loading...</p>)}
+              ) : (<p>No Evolutions</p>)}
 
             </div>
           </div>
