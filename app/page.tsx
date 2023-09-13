@@ -1,7 +1,7 @@
-import Link from "next/link"
+import PokemonListContainer from "@/components/pokemon/PokemonListContainer";
+import React from "react";
+import PokemonList from "@/components/pokemon/PokemonList";
 
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
 
 export default function IndexPage() {
   return (
@@ -13,6 +13,9 @@ export default function IndexPage() {
         <p className="max-w-[700px] text-lg text-muted-foreground">
           Your ultimate destination for exploring Pokémon by their unique types!
         </p>
+      </div>
+      <div>
+        <PokemonListContainer />
       </div>
     </section>
   )
